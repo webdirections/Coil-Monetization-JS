@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Detecting Coil</title>
+	<meta name="generator" content="BBEdit 13.1" />
+	<meta name=monetization content=$ilp.uphold.com/9fFrFUnJpwWA>
+	<!--
+		this is web directions payment pointer, just so it will work
+		feel free to change to your own! 
+	-->
+
+</head>
+<body>
+
+<form>
+<ul>
+	<li><label for="supported">Coil Supported: <output id="supported">No</output></label></li>
+	<li><label for="paying">Currently Paying: <output id="paying">No</output></label></li>
+</ul>
+
+</form>
+<script src="coil-monetizer.js"></script>
+
+<script>
+	//this taps into coil-monetizer and reports on whether a page supports monetization, and 
+	var coilDetection = {
+		
+		init: function() {
+			if (coilMonetizer.supported) {
+				document.querySelector("#supported").innerHTML = "Yes";
+				coilMonetizer.startPayingHandler = coilDetection.startPaying;
+				coilMonetizer.stopPayingHandler = coilDetection.startPaying;
+				
+			}
+		},
+		
+		startPaying: function() {
+				document.querySelector("#paying").innerHTML = "Yes";
+		},
+		
+		stopPaying: function() {
+				document.querySelector("#paying").innerHTML = "No";
+		}
+	}
+	
+	window.addEventListener("DOMContentLoaded", coilDetection.init, false)
+</script>
+</body>
+</html>
