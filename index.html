@@ -4,14 +4,24 @@
 	<title>Detecting Coil</title>
 	<meta name="generator" content="BBEdit 13.1" />
 	<meta name=monetization content=$ilp.uphold.com/9fFrFUnJpwWA>
+	
+
 	<!--
 		this is web directions payment pointer, just so it will work
-		feel free to change to your own! 
+		feel free to change to your own, or keep it here to stream us a few cents while you test :-)
 	-->
 
 </head>
 <body>
 
+<h1>About coil</h1>
+<p>For more information on Coil, a way of receiving streamed micropayments, see the <a href="https://coil.com">Coil Website</a>.</p>
+
+<h2>This page</h2>
+<p>This page uses coil-monetizer.js to detect if Coil is supported by your browser, then report when streaming payment starts and stops</p>
+<p><a href="https://github.com/webdirections/Coil-Monetization-JS">coil-monetizer.js</a> is a small MIT licensed JS library by <a href="https://twitter.com/johnallsopp">John Allsopp</a>/<a href="https://twitter.com/webdirections">Web Directions</a> that provides this functionality.</p>
+
+<h2>Coil monetization status for this page</h2>
 <form>
 <ul>
 	<li><label for="supported">Coil Supported: <output id="supported">No</output></label></li>
@@ -20,9 +30,9 @@
 
 </form>
 <script src="coil-monetizer.js"></script>
-
+<!-- include   -->
 <script>
-	//this taps into coil-monetizer and reports on whether a page supports monetization, and 
+	//this taps into coil-monetizer.js and reports on whether a page supports monetization, and 
 	var coilDetection = {
 		
 		init: function() {
