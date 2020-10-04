@@ -22,7 +22,7 @@ coilMonetizer is an object in coil-monetizer.js
 
 It has event handlers for the document.monetization events `monetizationstart` and `monetizationstop`.
 
-Set the `startPayingHandler` and `stopPayingHandler` attributes to functions to be called when monetization starts ans stops.
+Set the `startPayingHandler` and `stopPayingHandler` attributes to functions to be called when monetization starts or stops.
 
 In index.html find an example that installs simple handlers for these events.
 
